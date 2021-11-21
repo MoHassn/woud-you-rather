@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 const Nav = () => {
   return (
-    <div>
+    <div className="nav-container">
       <header>
         <ul className="nav-list">
           <li>

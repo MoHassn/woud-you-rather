@@ -6,6 +6,7 @@ import Nav from "./Nav";
 import RequireAuth from "./RequireAuth";
 import Home from "./Home";
 import Login from "./Login";
+import User from "./User";
 import { handleInitialData } from "../actions/shared";
 
 function App({ users, questions, dispatch }) {
@@ -17,7 +18,10 @@ function App({ users, questions, dispatch }) {
   }, []);
   return (
     <div className="App">
-      <Nav />
+      <div className="header-container">
+        <Nav />
+        <User />
+      </div>
       <Routes>
         <Route
           path="/"

@@ -7,4 +7,27 @@ body {
   list-style: none;
   padding: 10px;
   display: flex;
+  width: 50%;
+}
+.nav-list > li {
+  margin: 10px;
+}
+
+.header-container {
+  display: flex;
+}
+.nav-container {
+  width: 50%;
+}
+
+.user-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
