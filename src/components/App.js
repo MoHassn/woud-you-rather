@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Routes, Route } from "react-router-dom";
 
 import Nav from "./Nav";
+import RequireAuth from "./RequireAuth";
 import Home from "./Home";
 import Login from "./Login";
 import { handleInitialData } from "../actions/shared";
@@ -18,7 +19,22 @@ function App({ users, questions, dispatch }) {
     <div className="App">
       <Nav />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={
+            <RequireAuth>
+              <Home />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/add"
+          element={
+            <RequireAuth>
+              <div>add question</div>
+            </RequireAuth>
+          }
+        />
         <Route path="/login" element={<Login />} />
       </Routes>
     </div>
