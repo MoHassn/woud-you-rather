@@ -7,6 +7,7 @@ import RequireAuth from "./RequireAuth";
 import Home from "./Home";
 import Login from "./Login";
 import LeaderBoard from "./LeaderBoard";
+import NewQuestion from "./NewQuestion";
 import User from "./User";
 import { handleInitialData } from "../actions/shared";
 
@@ -36,7 +37,7 @@ function App({ users, questions, dispatch }) {
           path="/add"
           element={
             <RequireAuth>
-              <div>add question</div>
+              <NewQuestion />
             </RequireAuth>
           }
         />
