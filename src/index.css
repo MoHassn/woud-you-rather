@@ -31,3 +31,18 @@ body {
   height: 50px;
   border-radius: 50%;
 }
+
+.leaderboard-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin: auto;
+}
+
+.leaderboard-user {
+  display: flex;
+  justify-content: start;
+  margin-top: 30px;
+}

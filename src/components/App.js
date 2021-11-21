@@ -6,6 +6,7 @@ import Nav from "./Nav";
 import RequireAuth from "./RequireAuth";
 import Home from "./Home";
 import Login from "./Login";
+import LeaderBoard from "./LeaderBoard";
 import User from "./User";
 import { handleInitialData } from "../actions/shared";
 
@@ -36,6 +37,14 @@ function App({ users, questions, dispatch }) {
           element={
             <RequireAuth>
               <div>add question</div>
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/leaderboard"
+          element={
+            <RequireAuth>
+              <LeaderBoard />
             </RequireAuth>
           }
         />
