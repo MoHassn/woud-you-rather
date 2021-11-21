@@ -9,6 +9,7 @@ const LeaderBoard = ({ users }) => {
         .map((user) => {
           return (
             <LeaderBoardUser
+              key={user.id}
               name={user.name}
               avatarURL={user.avatarURL}
               askedQuestions={user.questions.length}
