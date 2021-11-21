@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+import App from "./components/App";
 import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import { createStore } from "redux";
 import reducer from "./reducers";
@@ -11,11 +12,14 @@ import middlewares from "./middlewares";
 import { Provider } from "react-redux";
 
 const store = createStore(reducer, middlewares);
+store.subscribe(() => console.log("state update", store.getState));
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <Router>
+        <App />
+      </Router>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")

@@ -1,8 +1,11 @@
-import "./App.css";
 import { useEffect } from "react";
 import { connect } from "react-redux";
-import Nav from "./components/Nav";
-import { handleInitialData } from "./actions/shared";
+import { Routes, Route } from "react-router-dom";
+
+import Nav from "./Nav";
+import Home from "./Home";
+import Login from "./Login";
+import { handleInitialData } from "../actions/shared";
 
 function App({ users, questions, dispatch }) {
   console.log("users", users);
@@ -14,6 +17,10 @@ function App({ users, questions, dispatch }) {
   return (
     <div className="App">
       <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
     </div>
   );
 }
