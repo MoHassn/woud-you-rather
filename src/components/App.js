@@ -8,7 +8,9 @@ import Home from "./Home";
 import Login from "./Login";
 import LeaderBoard from "./LeaderBoard";
 import NewQuestion from "./NewQuestion";
+import Question from "./Question";
 import User from "./User";
+import NotFound from "./NotFound";
 import { handleInitialData } from "../actions/shared";
 
 function App({ users, questions, dispatch }) {
@@ -50,6 +52,22 @@ function App({ users, questions, dispatch }) {
           }
         />
         <Route path="/login" element={<Login />} />
+        <Route
+          path="/questions/:question_id"
+          element={
+            <RequireAuth>
+              <Question />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/404"
+          element={
+            <RequireAuth>
+              <NotFound />
+            </RequireAuth>
+          }
+        />
       </Routes>
     </div>
   );
